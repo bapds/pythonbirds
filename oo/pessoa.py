@@ -7,7 +7,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return 'Olá'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def metodo_estático():

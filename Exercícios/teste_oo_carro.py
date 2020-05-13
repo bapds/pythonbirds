@@ -1,47 +1,15 @@
-if __name__ == '__main__':
-    motor = Motor()
-    print(motor.velocidade)
-    motor.acelerar()
-    print(motor.velocidade)
-    motor.acelerar()
-    print(motor.velocidade)
-    motor.acelerar()
-    print(motor.velocidade)
-    motor.frear
-    print(motor.velocidade)
-    motor.frear
-    print(motor.velocidade)
-    direcao = Direcao()
-    print(direcao.valor)
+from unittest import TestCase
+from Exercícios.oo_carro import Motor, Direcao, Carro
 
-    direcao.girar_a_direita()
-    print(direcao.valor)
-    direcao.girar_a_direita()
-    print(direcao.valor)
-    direcao.girar_a_direita()
-    print(direcao.valor)
-    direcao.girar_a_direita()
-    print(direcao.valor)
-    direcao.girar_a_esquerda()
-    print(direcao.valor)
-    direcao.girar_a_esquerda()
-    print(direcao.valor)
-    direcao.girar_a_esquerda()
-    print(direcao.valor)
-    direcao.girar_a_esquerda()
-    print(direcao.valor)
-    carro = Carro(direcao, motor)
-    carro.calcular_velocidade()
-    carro.acelerar()
-    print(carro.calcular_velocidade())
-    carro.acelerar()
-    print(carro.calcular_velocidade())
-    carro.frear
-    print(carro.calcular_velocidade())
-    print(carro.calcular_direcao())
-    carro.girar_a_direita()
-    print(carro.calcular_direcao())
-    carro.girar_a_esquerda()
-    print(carro.calcular_direcao())
-    carro.girar_a_esquerda()
-    print(carro.calcular_direcao())
+
+class CarroTestCase(TestCase):
+    def teste_velocidade_inicial(self):
+        motor = Motor()
+        self.assertEqual(0, motor.velocidade)
+
+    def teste_acelerar(self):
+        motor = Motor()
+        motor.acelerar()
+        self.assertEqual(1, motor.velocidade)
+
+
